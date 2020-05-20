@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="colorTotalConfirmed">#F44336</color>
-    <color name="colorTotalDeaths">#8C8C8C</color>
-    <color name="colorTotalRecovered">#4CAF50</color>
+    <color name="colorTotalConfirmed">#838383</color>
+    <color name="colorTotalDeaths">#C50000</color>
+    <color name="colorTotalRecovered">#29E431</color>
 
 </resources>
