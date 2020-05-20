@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorTotalConfirmed"
+            tools:text="498498"
+            style="@style/LabelFontStyle"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTotalCases" />
+
+        <TextView
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="wrap_content"
+            android:textColor="#fff"
+            tools:text="Iran"
+            style="@style/LabelFontStyle"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCountryName" />
+
+    </LinearLayout>
+
+</RelativeLayout>
