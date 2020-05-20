@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.university.corona2.R;
+
 import java.util.ArrayList;
 
 public class CovidCountryAdapter extends RecyclerView.Adapter<CovidCountryAdapter.ViewHolder> {
@@ -20,7 +22,7 @@ public class CovidCountryAdapter extends RecyclerView.Adapter<CovidCountryAdapte
     @NonNull
     @Override
     public CovidCountryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_covid_country  , parent , false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_covid, parent , false);
         return  new ViewHolder(view);
     }
 
