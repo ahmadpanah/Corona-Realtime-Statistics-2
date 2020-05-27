@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_country"
-        android:name="com.university.corona2.ui.country.DashboardFragment"
+        android:name="com.university.corona2.ui.country.CountryFragment"
         android:label="@string/title_country"
         tools:layout="@layout/fragment_country" />
 

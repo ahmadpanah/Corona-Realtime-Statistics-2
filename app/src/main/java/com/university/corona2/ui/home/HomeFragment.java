@@ -29,7 +29,7 @@ import java.lang.ref.ReferenceQueue;
 
 public class HomeFragment extends Fragment {
 
-    private TextView tvTotalConfirmed , tvTotralDeaths , tvTotalRecoverd ;
+    private TextView tvTotalConfirmed , tvTotalDeaths , tvTotalRecoverd ;
     private ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
 
         //Call View
         tvTotalConfirmed = root.findViewById(R.id.tvTotalConfirmed);
-        tvTotralDeaths = root.findViewById(R.id.tvTotalDeaths);
+        tvTotalDeaths = root.findViewById(R.id.tvTotalDeaths);
         tvTotalRecoverd = root.findViewById(R.id.tvTotalRecoverd);
         progressBar = root.findViewById(R.id.progress_circular_home);
 
@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
     private void getData() {
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
-        String  url = "https://corona.lmao.ninja/v2/all";
+        String url = "https://corona.lmao.ninja/v2/all";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -63,6 +63,9 @@ public class HomeFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(response.toString());
 
                     tvTotalConfirmed.setText(jsonObject.getString("cases"));
+                    tvTotalDeaths.setText(jsonObject.getString("deaths"));
+                    tvTotalRecoverd.setText(jsonObject.getString("recovered"));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -71,12 +74,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onErrorResponse (VolleyError error) {
                 progressBar.setVisibility(View.GONE);
-                Log.d("Error Response" , error.toString());
+                Log.d("Error Response", error.toString());
             }
-
         });
 
         queue.add(stringRequest);
-
     }
 }

@@ -3,11 +3,14 @@ package com.university.corona2.ui.country;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.university.corona2.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -28,17 +31,23 @@ public class CovidCountryAdapter extends RecyclerView.Adapter<CovidCountryAdapte
 
     @Override
     public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, int position) {
-
+        CovidCountry covidCountry = covidCountries.get(position);
+        holder.tvTotalCases.setText(covidCountry.getmCases());
+        holder.tvCountryName.setText(covidCountry.getmCovidCountry());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return covidCountries.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tvTotalCases , tvCountryName;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvTotalCases = itemView.findViewById(R.id.tvTotalCases);
+            tvCountryName = itemView.findViewById(R.id.tvCountryName);
         }
     }
 }
